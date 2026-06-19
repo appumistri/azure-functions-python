@@ -1,0 +1,12 @@
+services:
+  floci-az:
+    image: floci/floci-az:latest
+    ports:
+      - "4577:4577"   # floci-az HTTP (management plane)
+      - "5673:5673"   # Service Bus AMQP (Artemis)
+      - "5674:5674"   # Service Bus AMQPS (Artemis)
+    environment:
+      FLOCI_AZ_SERVICES_SERVICE_BUS_ENABLED: "true"
+      FLOCI_AZ_SERVICES_SERVICE_BUS_MOCKED: "false"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

@@ -1,0 +1,4 @@
+__azurite_*.json
+local.settings.json
+__blobstorage__
+__pycache__
